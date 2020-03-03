@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'frontend/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/styles.css' %}">
+    <title>ToDo App</title>
+</head>
+<body>
+    <div class="container">
+        <div id="form-wrapper">
+            <form id="task-form" method="post">
+                {% csrf_token %}
+                <input id='task-input' type="text" placeholder="Add new task"></input>
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </form>
+        </div>
+        <div id="task-wrapper">
+            
+        </div>
+    </div>
+    <script>
+        var task_list_url = '{% url "task_list" %}';
+    </script>
+    <script src="{% static 'frontend/script.js' %}"></script>
+</body>
+</html>
