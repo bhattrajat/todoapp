@@ -1,10 +1,13 @@
 # todoapp
 A simple todo app using django and django rest framework
 
+Requirements:
+* Python 3.6+
+
 Steps to install:
 1) If you dont have pipenv then install it using
 ```zsh
-pip3 install pipenv
+pip install pipenv
 ```
 2) Then Install all the dependencies using
 ```zsh
