@@ -76,7 +76,7 @@ function attach_edit_functionality(){
 
 function on_edit_click(id){
     task_input = document.getElementById('task-input');
-    task_input.placeholder = document.querySelector(`p[data-id="${id}"]`).textContent;
+    task_input.value = document.querySelector(`p[data-id="${id}"]`).textContent;
     edit_mode = true;
     button = document.querySelector('#task-form button');
     button.innerHTML = 'Update';
@@ -140,6 +140,9 @@ function main(){
                                 list_data().then(() => {
                                     attach_edit_functionality();
                                     attach_delete_functionality();
+                                    edit_mode = false;
+                                    document.querySelector('#task-form button').innerHTML = 'Add Task';
+                                    document.getElementById('task-form').reset();
                                     }
                                 )
                             }
